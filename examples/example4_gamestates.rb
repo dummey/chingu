@@ -118,7 +118,7 @@ class Level < Chingu::GameState
     
     #
     # The below code can mostly be replaced with the use of methods "holding?", "holding_all?" or "holding_any?" in Level#update
-    # Using holding? in update could be good if you need fine grained controll over when input is dispatched.
+    # Using holding? in update could be good if you need fine grained control over when input is dispatched.
     # 
     @player.input = {  :holding_left => :move_left, 
                        :holding_right => :move_right, 
@@ -128,7 +128,7 @@ class Level < Chingu::GameState
                        :holding_a => :fire }
 
     #
-    # The input-handler understands gamestates. P is pressed --> push_gamegate(Pause)
+    # The input-handler understands gamestates. P is pressed --> push_game_state(Pause)
     # You can also give it Procs/Lambdas which it will execute when key is pressed.
     #
     self.input = {:p => Pause, :r => lambda{ current_game_state.setup } }
